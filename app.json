@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "MyMoney",
-    "slug": "MyMoney",
+    "name": "MyTracker",
+    "slug": "MyTracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "mymoney",
+    "scheme": "MyTracker",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
