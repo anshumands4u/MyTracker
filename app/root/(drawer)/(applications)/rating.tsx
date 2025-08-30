@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 const rating = () => {
   return (
-    <View>
+    <View className="bg-bgColor2 flex-1">
       <Text>rating</Text>
     </View>
   );

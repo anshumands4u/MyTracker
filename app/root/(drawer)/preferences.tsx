@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 const preferences = () => {
   return (
-    <View>
+    <View className="bg-bgColor2 flex-1">
       <Text>preferences</Text>
     </View>
   );

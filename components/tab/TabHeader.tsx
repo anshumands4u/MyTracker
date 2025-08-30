@@ -13,7 +13,7 @@ const TabHeader: React.FC<TabHeaderProps> = ({ title, onMenuPress }) => {
 
   return (
     <View
-      className="bg-appColor1 px-4 flex-row items-center justify-between"
+      className="bg-bgColor1 px-4 flex-row items-center justify-between"
       style={{
         paddingTop: insets.top + 8,
         paddingBottom: 12,

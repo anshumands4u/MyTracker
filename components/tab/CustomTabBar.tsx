@@ -14,7 +14,7 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
 
   return (
     <View
-      className="bg-appColor1 border-t border-gray-200 flex-row"
+      className="bg-bgColor1 border-t border-gray-200 flex-row"
       style={{
         paddingBottom: insets.bottom,
         shadowColor: "#000",

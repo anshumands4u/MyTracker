@@ -51,7 +51,7 @@ const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
   };
 
   return (
-    <View className="flex-1 bg-appColor1">
+    <View className="flex-1 bg-bgColor1">
       <DrawerHeader />
 
       <ScrollView className="flex-1 pt-4" showsVerticalScrollIndicator={false}>

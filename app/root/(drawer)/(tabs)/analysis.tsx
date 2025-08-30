@@ -1,13 +1,7 @@
 import TabHeader from "@/components/tab/TabHeader";
 import { DrawerActions, useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Dimensions, ScrollView, Text, View } from "react-native";
-import {
-  ArrowTrendingUpIcon,
-  ChartBarIcon,
-} from "react-native-heroicons/outline";
-
-const { width } = Dimensions.get("window");
+import { View } from "react-native";
 
 const AnalysisScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -17,129 +11,8 @@ const AnalysisScreen: React.FC = () => {
   };
 
   return (
-    <View className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-bgColor2">
       <TabHeader title="Analysis" onMenuPress={handleMenuPress} />
-
-      <ScrollView className="flex-1 px-4 pt-4">
-        {/* Period Selector */}
-        <View className="flex-row bg-white rounded-xl p-1 mb-6">
-          {["Week", "Month", "Year"].map((period, index) => (
-            <View
-              key={period}
-              className={`flex-1 py-2 px-4 rounded-lg ${
-                index === 1 ? "bg-blue-500" : ""
-              }`}
-            >
-              <Text
-                className={`text-center font-medium ${
-                  index === 1 ? "text-white" : "text-gray-600"
-                }`}
-              >
-                {period}
-              </Text>
-            </View>
-          ))}
-        </View>
-
-        {/* Key Metrics */}
-        <View className="flex-row gap-3 mb-6">
-          <View className="flex-1 bg-white rounded-xl p-4">
-            <View className="flex-row items-center mb-2">
-              <ArrowTrendingUpIcon size={20} className="text-green-500 mr-2" />
-              <Text className="text-sm text-gray-600">Growth</Text>
-            </View>
-            <Text className="text-2xl font-bold text-gray-800">+23%</Text>
-            <Text className="text-xs text-green-600 mt-1">vs last month</Text>
-          </View>
-
-          <View className="flex-1 bg-white rounded-xl p-4">
-            <View className="flex-row items-center mb-2">
-              <ChartBarIcon size={20} className="text-blue-500 mr-2" />
-              <Text className="text-sm text-gray-600">Average</Text>
-            </View>
-            <Text className="text-2xl font-bold text-gray-800">8.5</Text>
-            <Text className="text-xs text-gray-500 mt-1">per day</Text>
-          </View>
-        </View>
-
-        {/* Chart Placeholder */}
-        <View className="bg-white rounded-xl p-4 mb-6">
-          <Text className="text-lg font-semibold text-gray-800 mb-4">
-            Weekly Trends
-          </Text>
-          <View
-            className="bg-gradient-to-b from-blue-50 to-blue-100 rounded-lg flex items-center justify-center"
-            style={{ height: 200 }}
-          >
-            <ChartBarIcon size={48} className="text-blue-400 mb-2" />
-            <Text className="text-blue-600 font-medium">
-              Chart Visualization
-            </Text>
-            <Text className="text-blue-500 text-sm">
-              Integration with charting library
-            </Text>
-          </View>
-        </View>
-
-        {/* Insights */}
-        <View className="bg-white rounded-xl p-4 mb-4">
-          <Text className="text-lg font-semibold text-gray-800 mb-3">
-            Insights
-          </Text>
-
-          <View className="space-y-3">
-            <View className="flex-row items-center p-3 bg-green-50 rounded-lg">
-              <View className="w-2 h-2 bg-green-500 rounded-full mr-3" />
-              <Text className="flex-1 text-gray-700">
-                Your productivity increased by 15% this week
-              </Text>
-            </View>
-
-            <View className="flex-row items-center p-3 bg-blue-50 rounded-lg">
-              <View className="w-2 h-2 bg-blue-500 rounded-full mr-3" />
-              <Text className="flex-1 text-gray-700">
-                Best performance on Tuesdays and Thursdays
-              </Text>
-            </View>
-
-            <View className="flex-row items-center p-3 bg-orange-50 rounded-lg">
-              <View className="w-2 h-2 bg-orange-500 rounded-full mr-3" />
-              <Text className="flex-1 text-gray-700">
-                Consider focusing more on weekend activities
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        {/* Time Distribution */}
-        <View className="bg-white rounded-xl p-4">
-          <Text className="text-lg font-semibold text-gray-800 mb-3">
-            Time Distribution
-          </Text>
-
-          {[
-            { label: "Work", percentage: 45, color: "bg-blue-500" },
-            { label: "Personal", percentage: 30, color: "bg-green-500" },
-            { label: "Health", percentage: 15, color: "bg-purple-500" },
-            { label: "Learning", percentage: 10, color: "bg-orange-500" },
-          ].map((item) => (
-            <View key={item.label} className="mb-3 last:mb-0">
-              <View className="flex-row justify-between items-center mb-1">
-                <Text className="text-gray-700 font-medium">{item.label}</Text>
-                <Text className="text-gray-500 text-sm">
-                  {item.percentage}%
-                </Text>
-              </View>
-              <View className="w-full bg-gray-200 rounded-full h-2">
-                <View
-                  className={`h-2 rounded-full ${item.color}`}
-                  style={{ width: `${item.percentage}%` }}
-                />
-              </View>
-            </View>
-          ))}
-        </View>
-      </ScrollView>
     </View>
   );
 };
