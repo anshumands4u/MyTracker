@@ -21,6 +21,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        appColor1: "#404040",
+        appColor2: "#171717",
         primary: {
           0: "rgb(var(--color-primary-0)/<alpha-value>)",
           50: "rgb(var(--color-primary-50)/<alpha-value>)",

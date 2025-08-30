@@ -1,17 +1,17 @@
-import { Button, ButtonText } from "@/components/ui/button";
-import React from "react";
-import { Text } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
+import { useEffect } from "react";
+import { View } from "react-native";
 
-const index = () => {
-  return (
-    <SafeAreaView>
-      <Text className="text-red-500 text-5xl">Hello world</Text>
-      <Button size="xl" variant="solid" action="negative">
-      <ButtonText>Hello World!</ButtonText>
-    </Button>
-    </SafeAreaView>
-  );
-};
+export default function AppEntry() {
+  const router = useRouter();
 
-export default index;
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      router.replace("/root/(drawer)/(tabs)");
+    }, 0); // Delay to ensure layout has mounted
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return <View />;
+}
