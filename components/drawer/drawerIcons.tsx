@@ -1,14 +1,5 @@
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
-import {
-  ArrowDownTrayIcon,
-  ChatBubbleLeftRightIcon,
-  CogIcon,
-  FolderIcon,
-  HeartIcon,
-  HomeIcon,
-  ShieldCheckIcon,
-  TrashIcon,
-} from "react-native-heroicons/outline";
 
 type RouteNames =
   | "index"
@@ -27,32 +18,31 @@ export const getDrawerIcon = (
 ): React.ReactNode => {
   const iconProps = {
     size: 20,
-    className: isActive ? "text-blue-600" : "text-gray-600",
-    color: "white",
+    color: "white", // ✅ always white
   };
 
-  const iconMap: Record<RouteNames, React.ComponentType<any>> = {
-    index: HomeIcon,
-    preferences: CogIcon,
-    "(management)/exportRecords": ArrowDownTrayIcon,
-    "(management)/backup": ShieldCheckIcon,
-    "(management)/resetData": TrashIcon,
-    "(applications)/rating": HeartIcon,
-    "(applications)/feedback": ChatBubbleLeftRightIcon,
+  const iconMap: Record<RouteNames, string> = {
+    index: "home-outline",
+    preferences: "settings-outline",
+    "(management)/exportRecords": "download-outline",
+    "(management)/backup": "shield-checkmark-outline",
+    "(management)/resetData": "trash-outline",
+    "(applications)/rating": "heart-outline",
+    "(applications)/feedback": "chatbubble-ellipses-outline",
   };
 
-  const IconComponent = iconMap[routeName as RouteNames] || FolderIcon;
-  return <IconComponent {...iconProps} />;
+  const iconName = iconMap[routeName as RouteNames] || "folder-outline";
+  return <Ionicons name={iconName as any} {...iconProps} />;
 };
 
 export const getSectionIcon = (sectionName: SectionNames): React.ReactNode => {
-  const iconProps = { size: 16, className: "text-gray-500", color: "white" };
+  const iconProps = { size: 16, color: "white" }; // ✅ always white
 
-  const sectionIcons: Record<SectionNames, React.ComponentType<any>> = {
-    management: CogIcon,
-    support: HeartIcon,
+  const sectionIcons: Record<SectionNames, string> = {
+    management: "settings-outline",
+    support: "heart-outline",
   };
 
-  const IconComponent = sectionIcons[sectionName] || FolderIcon;
-  return <IconComponent {...iconProps} />;
+  const iconName = sectionIcons[sectionName] || "folder-outline";
+  return <Ionicons name={iconName as any} {...iconProps} />;
 };

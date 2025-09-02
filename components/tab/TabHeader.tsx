@@ -1,6 +1,6 @@
+import { Ionicons } from "@expo/vector-icons";
 import React from "react";
 import { Pressable, Text, View } from "react-native";
-import { Bars3Icon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface TabHeaderProps {
@@ -29,7 +29,9 @@ const TabHeader: React.FC<TabHeaderProps> = ({ title, onMenuPress }) => {
         onPress={onMenuPress}
         className="p-2 rounded-full active:bg-white/20"
       >
-        <Bars3Icon size={24} color={"white"} className="text-white" />
+        {/* <Bars3Icon size={24} color={"white"} className="text-white" />
+         */}
+        <Ionicons name="menu" size={24} color="white" />
       </Pressable>
 
       {/* Center - Title */}
@@ -39,7 +41,7 @@ const TabHeader: React.FC<TabHeaderProps> = ({ title, onMenuPress }) => {
 
       {/* Right side - search */}
       <Pressable className="p-2 rounded-full active:bg-white/20 relative">
-        <MagnifyingGlassIcon color="white" size={24} className="text-white" />
+        <Ionicons name="search" size={24} color="white" />
       </Pressable>
     </View>
   );

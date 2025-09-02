@@ -1,14 +1,5 @@
+import { FontAwesome5, Ionicons } from "@expo/vector-icons";
 import React from "react";
-import {
-  ChartBarIcon,
-  DocumentTextIcon,
-  TagIcon,
-} from "react-native-heroicons/outline";
-import {
-  ChartBarIcon as ChartBarIconSolid,
-  DocumentTextIcon as DocumentTextIconSolid,
-  TagIcon as TagIconSolid,
-} from "react-native-heroicons/solid";
 
 type TabNames = "records" | "analysis" | "category";
 
@@ -22,17 +13,42 @@ export const getTabIcon = (routeName: string) => {
   return ({ focused, color, size }: TabIconProps): React.ReactNode => {
     const iconMap: Record<
       TabNames,
-      { outline: React.ComponentType<any>; solid: React.ComponentType<any> }
+      { outline: string; solid?: string; family: "Ionicons" | "FontAwesome5" }
     > = {
-      records: { outline: DocumentTextIcon, solid: DocumentTextIconSolid },
-      analysis: { outline: ChartBarIcon, solid: ChartBarIconSolid },
-      category: { outline: TagIcon, solid: TagIconSolid },
+      records: {
+        outline: "document-text-outline",
+        solid: "document-text",
+        family: "Ionicons",
+      },
+      analysis: {
+        outline: "bar-chart-outline",
+        solid: "bar-chart",
+        family: "Ionicons",
+      },
+      category: {
+        outline: "tag",
+        solid: "tags",
+        family: "FontAwesome5",
+      },
     };
 
     const icons = iconMap[routeName as TabNames];
-    if (!icons) return <DocumentTextIcon size={size} color={color} />;
+    if (!icons) {
+      return (
+        <Ionicons name="document-text-outline" size={size} color={color} />
+      );
+    }
 
-    const IconComponent = focused ? icons.solid : icons.outline;
-    return <IconComponent size={size} color={color} />;
+    const iconName = focused && icons.solid ? icons.solid : icons.outline;
+
+    switch (icons.family) {
+      case "FontAwesome5":
+        return (
+          <FontAwesome5 name={iconName as any} size={size} color={color} />
+        );
+      case "Ionicons":
+      default:
+        return <Ionicons name={iconName as any} size={size} color={color} />;
+    }
   };
 };
