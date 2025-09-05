@@ -15,7 +15,18 @@ export async function getCategoryById(id: number) {
 // 🔹 Get category by type
 export async function getCategoriesByType(type: "good" | "bad") {
   return db
-    .select()
+    .select({
+      id: categories.id,
+      name: categories.name,
+      iconId: categories.iconId,
+      icon: {
+        id: icons.id,
+        name: icons.name,
+        setName: icons.setName,
+        color: icons.color,
+        type: icons.type,
+      },
+    })
     .from(categories)
     .innerJoin(icons, eq(categories.iconId, icons.id))
     .where(eq(icons.type, type))
