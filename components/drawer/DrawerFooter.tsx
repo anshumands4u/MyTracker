@@ -13,10 +13,10 @@ const DrawerFooter: React.FC<DrawerFooterProps> = ({
   return (
     <>
       <View className="mt-8 mx-3 p-4 bg-blue-500 rounded-xl">
-        <Text className="text-xs text-white text-center">
+        <Text className="text-xs text-primary-500 text-center">
           {appName} v{version}
         </Text>
-        <Text className="text-xs text-white text-center mt-1">
+        <Text className="text-xs text-primary-500 text-center mt-1">
           Track Your Life ❤️
         </Text>
       </View>

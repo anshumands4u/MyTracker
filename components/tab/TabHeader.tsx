@@ -13,7 +13,7 @@ const TabHeader: React.FC<TabHeaderProps> = ({ title, onMenuPress }) => {
 
   return (
     <View
-      className="bg-bgColor1 px-4 flex-row items-center justify-between"
+      className="bg-background-200 px-4 flex-row items-center justify-between"
       style={{
         paddingTop: insets.top + 8,
         paddingBottom: 12,
@@ -29,17 +29,21 @@ const TabHeader: React.FC<TabHeaderProps> = ({ title, onMenuPress }) => {
         onPress={onMenuPress}
         className="p-2 rounded-full active:bg-white/20"
       >
-        <Bars3Icon size={24} color={"white"} className="text-white" />
+        <Bars3Icon size={24} color={"white"} className="text-primary-500" />
       </Pressable>
 
       {/* Center - Title */}
       <View className="flex-1 items-center">
-        <Text className="text-white text-lg font-semibold">{title}</Text>
+        <Text className="text-primary-500 text-lg font-semibold">{title}</Text>
       </View>
 
       {/* Right side - search */}
       <Pressable className="p-2 rounded-full active:bg-white/20 relative">
-        <MagnifyingGlassIcon color="white" size={24} className="text-white" />
+        <MagnifyingGlassIcon
+          color="white"
+          size={24}
+          className="text-primary-500"
+        />
       </Pressable>
     </View>
   );

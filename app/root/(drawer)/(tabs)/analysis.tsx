@@ -11,7 +11,7 @@ const AnalysisScreen: React.FC = () => {
   };
 
   return (
-    <View className="flex-1 bg-bgColor2">
+    <View className="flex-1 bg-background-50">
       <TabHeader title="Analysis" onMenuPress={handleMenuPress} />
     </View>
   );

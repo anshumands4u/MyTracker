@@ -14,7 +14,7 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
 
   return (
     <View
-      className="bg-bgColor1 border-t border-gray-200 flex-row"
+      className="bg-background-200 border-t border-gray-200 flex-row"
       style={{
         paddingBottom: insets.bottom,
         shadowColor: "#000",
@@ -73,7 +73,7 @@ const CustomTabBar: React.FC<BottomTabBarProps> = ({
               </View>
 
               {/* Label */}
-              <Text className={`text-xs font-medium text-white`}>
+              <Text className={`text-xs font-medium text-primary-500`}>
                 {typeof label === "string" ? label : route.name}
               </Text>
             </View>

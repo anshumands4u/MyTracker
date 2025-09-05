@@ -1,7 +1,7 @@
 import TabHeader from "@/components/tab/TabHeader";
 import { DrawerActions, useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
 const index: React.FC = () => {
   const navigation = useNavigation();
@@ -11,8 +11,9 @@ const index: React.FC = () => {
   };
 
   return (
-    <View className="flex-1 bg-bgColor2">
+    <View className="flex-1 bg-background-50">
       <TabHeader title="Records" onMenuPress={handleMenuPress} />
+      <Text className="text-primary-500">Hello world</Text>
     </View>
   );
 };

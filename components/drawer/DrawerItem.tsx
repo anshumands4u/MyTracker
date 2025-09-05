@@ -26,7 +26,7 @@ const DrawerItem: React.FC<DrawerItemProps> = ({
         onPress={onPress}
       >
         <View className="mr-3">{icon}</View>
-        <Text className={`flex-1 text-base font-medium text-white`}>
+        <Text className={`flex-1 text-base font-medium text-primary-500`}>
           {label}
         </Text>
       </Pressable>
