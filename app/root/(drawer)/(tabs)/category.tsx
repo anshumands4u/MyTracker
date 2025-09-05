@@ -1,7 +1,8 @@
 import TabHeader from "@/components/tab/TabHeader";
+import { Divider } from "@/components/ui/divider";
 import { DrawerActions, useNavigation } from "@react-navigation/native";
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
 const CategoryScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -13,6 +14,12 @@ const CategoryScreen: React.FC = () => {
   return (
     <View className="flex-1 bg-background-50">
       <TabHeader title="Categories" onMenuPress={handleMenuPress} />
+      <View className="ml-5 mt-5">
+        <Text className="text-primary-500 font-semibold text-xl">
+          Good Habit Categories
+        </Text>
+        <Divider />
+      </View>
     </View>
   );
 };
